@@ -79,9 +79,10 @@ class CalculatorSceenstate extends State<CalculatorSceen>{
   }
   Wrap Buttonpart(Size screenSize) {
     return Wrap(
+                //to reveive the press value using buildButton(Custom) Widget
                children: Btn.buttonValues
                    .map(
-                     (value) => SizedBox(
+                     (value) => SizedBox( //here value means pre define Listview value
                          width:value==Btn.n0
                              ? screenSize.width/2: screenSize.width/4,
                          height: screenSize.width/5,
@@ -92,7 +93,7 @@ class CalculatorSceenstate extends State<CalculatorSceen>{
 
              );
   }
-
+//for change the button colors
   Color getBtnColor(values){
    return [Btn.del,Btn.clr].contains(values)
         ?Colors.blueGrey
@@ -107,6 +108,7 @@ class CalculatorSceenstate extends State<CalculatorSceen>{
         ? Colors.orange
         :Colors.black87;
   }
+  // display value on press
   void onBtnTap(String value){
     if(value==Btn.del){
      delete();
